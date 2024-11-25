@@ -1,10 +1,15 @@
-const http = require("http")
-const server = http.createServer((req, res)=>
+const http = require('http')
+
+const server= http.createServer((req,res)=>
 {
-    console.log('request event')
-    res.end('Hello World')
+    if(req.url==='/')
+    {
+        console.log('request sent')
+        res.end('Hello World')
+    }
+
 })
 server.listen(3000,()=>
 {
-    console.log("Listening to port 5000.....")
+    console.log('Listening to port 3000....')
 })

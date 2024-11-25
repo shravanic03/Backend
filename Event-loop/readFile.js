@@ -1,13 +1,17 @@
-const fs = require('fs');
-console.log("Start");
-fs.readFile("./content/first.txt","utf8",(err,result)=>
+const {readFile, writeFile}= require('fs')
+console.log('Starting task')
+
+readFile('./content/first.txt','utf-8',(err, result)=>
 {
     if(err)
     {
         console.log(err)
-        return;
+
     }
-    console.log(result)
-    console.log("Done reading the file")
+    else{
+        console.log(result)
+        console.log('Completed task')
+    }
 })
-console.log("Moving on to next task ")
+console.log('Starting with new one ')
+
